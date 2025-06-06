@@ -66,3 +66,41 @@ Django автоматически создал основные необходи
 
 ### Структура моделей models.py (NewsPaper/news/models.py)
 ![FPW_D2.5_1.png](img/FPW_D2.5_1.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+echo "# django_views" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M master
+git remote add origin https://github.com/DS-975/django_views.git
+git push -u origin master
