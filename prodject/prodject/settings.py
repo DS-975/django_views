@@ -133,3 +133,10 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# Это настройка в Django, которая говорит:
+# Ищи статические файлы (например, CSS, JavaScript, картинки)
+# в папке static, которая находится внутри вашего проекта.
+STATICFILES_DIRS = [ BASE_DIR / 'static']
+# BASE_DIR — это папка, где находится ваш проект.
+# BASE_DIR / 'static' — это путь к папке static внутри вашего проекта.
