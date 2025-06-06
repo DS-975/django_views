@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+SITE_ID = 1 # для корректной работы 'django.contrib.sites'
 
 # Application definition
 
@@ -38,6 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    'django.contrib.sites', # для site в файле prodject/prodject/urls.py
+    'django.contrib.flatpages', # для встроенного приложения flatpages применения стилей
 
     'simpleapp', # Приложение
 ]

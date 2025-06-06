@@ -48,19 +48,34 @@ Django будет их использовать, когда потребуетс
 
 ### Добавил отдельную ссылку products/ дял просмотр всех товаров в файле project/urls.py
 
-### Подключил встроенное приложение flatpages, в список INSTALLED_APPS, в файле project/settings.py
 
-### Создал файл templates/flatpages, где будет храниться стили и добавил default.html, чтобы django понимал где искать стили
-
-### В файле prodject/prodject/settings.py настройки в списке MIDDLEWARE добавил ('django.contrib.flatpages.middleware.FlatpageFallbackMiddleware') для корректной работы встроенного приложения flatpages
-MIDDLEWARE — это нечто вроде декораторов, которые применяются к абсолютно любой ссылке в веб-приложении и так же могут менять её поведение.
-
-### Прописал путь до шаблонов, в файле prodject/prodject/settings.py настройки в списке TEMPLATES ('DIRS': [os.path.join(BASE_DIR, 'templates')],) 
-
-
-
-python manage.py createsuperuser
-
+### Базовая настройка Django flatpages и ссылок
+- В файле prodject/prodject/settings.py :
+-  - - - - - - - - - - - - - - - - - - - - -
+- SITE_ID = 1 # для корректной работы 'django.contrib.sites'
+-  - - - - - - - - - - - - - - - - - - - - -
+- - В список INSTALLED_APPS добавляем строки :
+- - - 'django.contrib.sites', # для site в файле prodject/prodject/urls.py
+- - - 'django.contrib.flatpages', # для встроенного приложения flatpages применения стилей
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - В список MIDDLEWARE добавляем строку :
+- - - MIDDLEWARE — это нечто вроде декораторов, которые применяются к абсолютно любой ссылке в веб-приложении и так же могут менять её поведение.
+- - - 'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware', # для корректной работы встроенного приложения flatpages
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - В список TEMPLATES добавляем в 'DIRS'
+- - - 'DIRS': [os.path.join(BASE_DIR, 'templates')], # Путь до шаблонов
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - 
+- В файле prodject/prodject/urls.py : 
+- - В список urlpatterns добавляем строку :
+- - - path('pages/', include('django.contrib.flatpages.urls')), # для стилей
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - 
+- - - - - - - - - - - - - - - - - - - - - - - 
+- Создание администратора 
+- - ### python manage.py createsuperuser
+- - admin admin
 
 
 
