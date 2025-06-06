@@ -55,6 +55,21 @@ Django будет их использовать, когда потребуетс
 ### В файле prodject/prodject/settings.py настройки в списке MIDDLEWARE добавил ('django.contrib.flatpages.middleware.FlatpageFallbackMiddleware') для корректной работы встроенного приложения flatpages
 MIDDLEWARE — это нечто вроде декораторов, которые применяются к абсолютно любой ссылке в веб-приложении и так же могут менять её поведение.
 
+### Прописал путь до шаблонов, в файле prodject/prodject/settings.py настройки в списке TEMPLATES ('DIRS': [os.path.join(BASE_DIR, 'templates')],) 
+
+
+
+python manage.py createsuperuser
+
+
+
+
+
+
+
+
+
+
 Запустить сервер
 ### py .\manage.py runserver
 
