@@ -50,8 +50,10 @@ Django будет их использовать, когда потребуетс
 
 ### Подключил встроенное приложение flatpages, в список INSTALLED_APPS, в файле project/settings.py
 
-### Создал файл templates/flatpages, где будет хранится стили и добавил default.html, чтобы django понимал где искать стили
+### Создал файл templates/flatpages, где будет храниться стили и добавил default.html, чтобы django понимал где искать стили
 
+### В файле prodject/prodject/settings.py настройки в списке MIDDLEWARE добавил ('django.contrib.flatpages.middleware.FlatpageFallbackMiddleware') для корректной работы встроенного приложения flatpages
+MIDDLEWARE — это нечто вроде декораторов, которые применяются к абсолютно любой ссылке в веб-приложении и так же могут менять её поведение.
 
 Запустить сервер
 ### py .\manage.py runserver
