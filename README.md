@@ -147,7 +147,15 @@ Django будет их использовать, когда потребуетс
 
 
 
+from news.models import *
 
+# Сначала создайте категорию, если её ещё нет
+category = Category.objects.create(name='Бытовая химия')
+
+# Затем создайте товар, указав ВСЕ обязательные поля
+p_1 = Product.objects.create(name='Мочалка', description='Очень хорошо моет', quantity=10, category=category, price=299.99)
+
+p_2 = Product.objects.create(name='Зубная Щётка', description='Классно чистит зубы', quantity=10, category=category, price=99.99)
 
 
 
